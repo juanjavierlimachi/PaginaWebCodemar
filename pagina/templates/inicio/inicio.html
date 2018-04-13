@@ -1,0 +1,472 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>::CodeMar::</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.minWeb.css' %}">
+    <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/jquery-1.12.4.minWeb.js' %}"></script>
+<script src="{% static 'js/bootstrap.minWeb.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.corner.js' %}"></script> 
+ <script src="{% static 'js/wow.min.js' %}"></script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+    <style type="text/css">
+    .owl-item{
+      width: 300px;
+    }
+    .face .icon-facebook{border-radius: 90px;width: 30px;height: 30px;}
+    #owl-demo{width: 60%;}
+      .social{
+        position: fixed;
+        right: 0;
+        top: 35%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-end;
+        z-index: 1000;
+      }
+      .icon{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        transition:all .5s;
+        padding: 10px 15px;
+        text-decoration: none;
+        }
+        .iconF{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        transition:all .5s;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 50px;
+        }
+        #facebook{
+          background: #3b5998;
+        }
+        .icon-twitter{
+          background: #00abf0;
+        }
+        .icon-google-plus{
+          background: #d95232;
+        }
+        .icon-pinterest{
+          background: #ae181f;
+        }
+        .icon-mail{
+          background: #666666;
+        }
+        #whasap{
+          background: #34AF23;
+        }
+        .icon-user{background: black;}
+        .icon:first-child{
+          border-radius: 0.5rem 0 0 0;
+        }
+        .icon:last-child{
+          border-radius: 0 0 0 0.5rem;
+        }
+        .icon:hover{
+          padding-right: 3rem;
+          border-radius: 1rem 0 0 1rem;
+          box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+        }
+        .social #enlaces{list-style: none;}
+        #enlaces{list-style: none; }
+        #direccion{background: #FF6138;text-align: center;
+                  font-size: 30px;}
+        #direccion p{color: white}
+        #direccion h4{font-size: 34px;font-weight: bold;color: white;}
+        #dire{width: 90%;}
+        #dir{margin: 0;}
+    </style>
+
+  </head>
+  <body>
+    <div class="bg">
+    <div class="container">
+      <div id="home" class="header wow bounceInDown" data-wow-delay="0.4s">
+          <div class="top-header">
+            <div class="logo">
+              <a href="#">Dev</a>
+            </div>
+             <nav class="top-nav">
+              <ul class="top-nav">
+                <li><a href="#about" class="scroll">Nosotros</a></li>
+                <li><a  href="#contact" class="scroll">Dirección</a></li>
+                <li><a  href="#servicios" class="scroll">Servicios</a></li>
+                <li><a href="#process" class="scroll">Cursos</a></li>
+                {% if user.is_authenticated %}
+                <!-- <li><a href="#team">Novedades</a></li> -->
+                <li><a href="/salir/">Salir</a></li>
+                {% else %}
+                <li id="enlaces"><a href="/loguin/" class="scroll" data-toggle="modal" data-target="#exampleModal">Ingresar</a></li>
+                {% endif %}
+              </ul>
+              <a href="#" id="pull"><img src="{% static 'img/nav-icon.png' %}" title="menu" /></a>
+            </nav>
+            <div class="clearfix"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-info">
+        <div class="container">
+          <h1 class="wow fadeIn" data-wow-delay="0.5s"><span>CodeMar S.R.L.</span><br /><label>Desarrollo de Software</label></h1>
+        <div class="top-banner-grids wow bounceInUp" data-wow-delay="0.4s">
+          
+          <div class="banner-grid text-center">
+            Potosí - Bolivia
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+      <div id="about" class="about">
+        <div class="head-section">
+          <div class="container">
+            <h3><span>Consultora </span><label>CodeMar S.R.L.</label></h3>
+          </div>
+        </div>
+          
+          <div class="about-grids">
+            <div class="col-md-4 about-grid about-grid1 wow fadeInLeft" data-wow-delay="0.4s">
+              <div class="about-grid-info">
+                <h4><a href="#">Misión</a></h4>
+                <p>
+                  Consultora CodeMar es una empresa tecnológica moderna, vanguardista a los cambios de la tecnología, dedicada a dar soluciones a problemas empresariales y particulares impulsando sus ideas, contamos con un grupo de ingenieros innovadores preparados para brindarle servicios de alta calidad en desarrollo de software, soporte técnico en computadoras y respuestas con total calidez y sinceridad a todas las consultas que usted nos realiza.
+                </p>
+              </div>
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic1.jpg' %}" title="name" />
+              </div>
+            </div>
+            <div class="col-md-4 about-grid about-grid2 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic2.jpg' %}" title="name" />
+              </div>
+              <div class="about-grid-info">
+                <h4><a href="#">Nosotros</a></h4>
+                <p>En CodeMar S.R.L desarrollamos todo tipo de sistemas y aplicaciones nativas para dispositivos móviles Android y iOS para la automatización del manejo de su información, aplicando la que mejor se acomode a sus necesidades,<br><br>
+                Utilizando tecnologías de desarrollo modernas  
+                las cuales garantizan un producto final eficaz y sofisticado que va al nivel de su empresa.<br>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 about-grid about-grid1 wow fadeInRight" data-wow-delay="0.4s">
+              <div class="about-grid-info">
+                <h4><a href="#">Visión</a></h4>
+                <p>Los Sistemas de Información Automatizadas (SIA) han cambiado la forma en que operan las empresas y organizaciones, logrando importantes mejoras en la toma de decisiones, obteniendo grandes resultados como la buena atención a sus clientes convirtiéndose en empresas modernas.
+                  Somos Profesionales, la ingeniería es nuestra mejor herramienta de trabajo.
+          <br>
+                  <br>
+</p>
+              </div>
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic3.jpg' %}" title="name" />
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        
+        </div>
+      </div>
+ <!-- avia otras imagen -->
+      </div>
+      <div class="work-with-us text-center" id="servicios">
+        <div class="container">
+          <h4>Consultora CodeMar realiza trabajos 100% garatizados y profecionales como ser:</h4>
+          <p>Desarrollo de sistemas informáticos, sistemas Web, aplicaciones para Android.</p>
+          <p>Asesoramiento en proyectos informáticos.</p>
+          <p>Mantenimiento y soporte técnico de computadoras.</p>
+          <p>Formateos e Instalaciones de antivirus, sistemas operativos Windows Xp-7-8-10</p>
+          <p>Curso de Programación en C++, PHP, Python. </p>
+          <p>Cursos de Word, Excel, PowerPoint y Publisher.</p>
+          <p>Dirección: Calle Final La Paz #33</p>
+          <p>Correo electrónico: caresoft.innova@gmail.com</p>
+            <p>Celular: 79436914  has click para contactarme por: <a href="https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias." style="color:green" target="_blank">
+              WhatsApp</a>
+            </p>
+            <p>Tambien mediante: <a href="https://www.facebook.com/CodeMarS.R.L" target="_blank">Facebook</a></p>
+            <p>Potosí - Bolivia</p>
+        </div>
+      </div>
+  <div id="contact" class="map">
+    <div class="map-location">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m30!1m12!1m3!1d894.509838569864!2d-65.7474803240542!3d-19.57482017249735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m15!3e0!4m3!3m2!1d-19.5745629!2d-65.7475073!4m5!1s0x93f94e0e72e5d423%3A0xaae8f4290ef1f4e8!2sVilla+Imperial+de+Potos%C3%AD%2C+Bolivia!3m2!1d-19.572280499999998!2d-65.75500629999999!4m3!3m2!1d-19.5743984!2d-65.7462729!5e1!3m2!1ses!2ses!4v1501868790166" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div> 
+      <div class="sreen-gallery-cursual">
+               <!-- requried-jsfiles-for owl -->
+        <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+        <script src="{% static 'js/owl.carousel.js' %}"></script>
+                      <script>
+                  $(document).ready(function() {
+                    $("#owl-demo").owlCarousel({
+                      items : 3,
+                      lazyLoad : true,
+                      autoPlay : true,
+                      navigation : true,
+                      navigationText :  false,
+                      pagination : false,
+                    });
+                  });
+                  </script>
+               <!-- //requried-jsfiles-for owl -->
+               <!-- start content_slider -->
+                   <div id="owl-demo" class="owl-carousel text-center">
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/1.jpg' %}" alt="name" style="width: 240px;">
+                            <h5><span>Mariana</span> Javier</h5>
+                            <label>Administadora</label>
+                          </div>
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/2.jpg' %}" alt="name" style="width: 240px;">
+                            <h5><span>Juan</span> Javier Limachi</h5>
+                            <label>Desarrollador</label>
+                          </div> 
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/3.jpg' %}" alt="name" style="width: 240px;">
+                            <h5><span>Jenny</span> Tarqui M.</h5>
+                            <label>Desarrolladora</label>
+                          </div> 
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/4.jpg' %}" alt="name" style="width: 240px;">
+                            <h5><span>Luciana </span> Camata B.</h5>
+                            <label>Analista</label>
+                          </div>
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/5.jpg' %}" alt="name" style="width: 240px;">
+                            <h5><span>Kenny</span> Johns</h5>
+                            <label>Secretaria</label>
+                          </div>
+                          <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            <img class="lazyOwl" data-src="{% static 'img/6.png' %}" alt="name" style="width: 240px;">
+                            <h5><span>Jhosemar</span> Copa</h5>
+                            <label>Informático</label>
+                          </div>
+                      </div>
+      </div>
+<div class="blog" id="process">
+        <div class="head-section">
+          <div class="container">
+            <h3><span>Estudia nuestros </span><label>Cursos</label></h3>
+          </div>
+        </div>
+  <div class="blog-grids">
+          <div class="container">
+          <div class="blog-grids-left">
+            {% for i in productos %}
+    <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s"><!--start uno-->
+                <div class="blog-art-pic">
+               <div style="width: 100%;">
+         <!-- <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+         <img src="{{MEDIA_URL}}{{i.Imagen}}">
+         </div> -->
+         </div>
+                </div>
+                <div class="blog-art-info">
+                  <h3><a href="#">{{i.Nombre_producto|upper}}</a></h3>
+                  <p>Descripción: {{i.Descripcion|upper}}<hr>
+                    Enlace: <a href="{{i.enlace_url}}" target="_blank">{{i.enlace_url}}</a>
+                  </p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span><span style="color:#337ab7">A: {{i.gusto}} Personas les gusta</span></span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                       <li><label class="b-icon1"> </label>
+                        me gusta:<input type="radio" name="si{{i.id}}" onclick="Like({{i.id}})" data-toggle="modal" data-target="#exampleModal">
+                        </li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div><!--fin uno-->
+                 {% endfor %}
+    </div>
+        <div class="clearfix"> </div>
+      </div>
+  </div>
+</div>
+<div class="blog" id="ofertas">
+        <div class="head-section">
+          <div class="container">
+            <h3><span>Tutoriales y</span><label>Presentaciones</label></h3>
+          </div>
+        </div>
+  <div class="blog-grids">
+          <div class="container">
+          <div class="blog-grids-left">
+            {% for i in pro_en_ofertas %}
+    <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s"><!--start uno-->
+                <div class="blog-art-pic">
+               <div style="width: 100%;">
+         <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0; border-radius: 10px;">
+         <iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="{{i.enlace_url}}" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="no" allownetworking="all"></iframe>
+         </div>
+
+         </div>
+                </div>
+                <div class="blog-art-info">
+                  <h3><a href="#">{{i.Nombre_producto}}</a></h3>
+                  <p>Descripción: {{i.Descripcion|upper}}</p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span style="color:#337ab7">A: {{i.gusto}} Personas les gusta</span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                        <li><label class="b-icon1"> </label>
+                          me gusta:<input type="radio" name="si{{i.id}}" onclick="Like({{i.id}})" data-toggle="modal" data-target="#exampleModal">
+                        </li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div><!--fin uno-->
+                 {% endfor %}
+    </div>
+        <div class="clearfix"> </div>
+      </div>
+  </div>
+</div>
+  {% if user.is_authenticated %}
+<div class="modal fade" id="exampleModalAviso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bienvenido: {{user.username|upper}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      <p>Estamos felices por haberte registrado en nuestro sitio Web ahora ya eres uno más de nuestros clientes, esperamos tenerte bien informado con todas nuestras actividades y ofertas que tendremos no te lo pierdas, opten más información ingresando al sitio Web con tu respetiva cuenta o bien revisando tu correo electrónico Saludos. !!!<br>
+        Ahora también ya puede comunicar directamente mediante<a href="https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias." target="_blank"> WhatsApp has click aqui</a>
+       </p> </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      <p>Hola {{request.user}}, estamos felices por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios, esperamos tenerte bien informado con todas nuestras actividades y ofertas que tendremos no te lo pierdas opten más información ingresando al sitio web con tu respetiva cuenta y bien revisando tu correo electrónico. <br> 
+        Ahora también ya puede comunicar directamente mediante
+        <a href="https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias." target="_blank"> WhatsApp has click aqui</a>
+      </p> 
+    </div>
+    </div>
+  </div>
+</div>
+<div class="social">
+  <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=https://shrouded-journey-73490.herokuapp.com','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="icon icon-facebook" id="facebook" title?"Comparte con Facebook"></a>
+
+  <a href="javascript: void(0);" onclick="window.open('whatsapp://send?text=Crea tu página Web para cualquier tipo de negocio o empresa, para más información visita mi página Web /?u=https://shrouded-journey-73490.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="icon icon-whatsapp" id="whasap" title?"Comparte con Whatsapp"></a>
+
+  <a href="javascript: void(0);" onclick="window.open('http://twitter.com/home?status=https://shrouded-journey-73490.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450' );" class="icon icon-twitter" title?"Comparte con Twitter"></a>
+  <a href="javascript: void(0);" onclick="window.open('https://plus.google.com/share?url=https://shrouded-journey-73490.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="icon icon-google-plus" title?"Comparte con Google Plus"></a>
+  <a href="mailto:sistemasuatf12345@gmail.com" class="icon icon-mail" title="Envie un Mensaje al Correo Electrónico"></a>
+  {% if user.is_authenticated %}
+  <li id="enlaces"><a href="/perfilUser/" class="icon icon-user" title="Bien venido:{{user.username|upper}}"
+    data-toggle="modal" data-target="#exampleModal"></a></li>
+  {% endif %}
+</div>
+ <div class="footer text-center">
+        <div class="container">
+          <div class="footer-inner wow zoomIn" data-wow-delay="0.3s">
+            <ul>
+              <li><a href="https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias." target="_blank" style="color:white;">Administrador del Sistema Web: Juan Javier L.  - Has click para comunicarte directamente WhatsApp:
+               <a href="https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias." target="_blank">79436914</a>
+               <span class="iconF icon-shatsapp"></span>
+               <a href="https://www.facebook.com/CodeMarS.R.L" target="_blank">ó Facebook</a></a>
+              {% if user.is_authenticated %}
+                <a href="/salir/" class="contact-me">Hola: {{user.username|upper}}, Salir</a>
+                {% else %}
+                <a href="/loguin/" class="scroll contact-me" data-toggle="modal" data-target="#exampleModal">Iniciar sesión</a>
+                {% endif %}</li>
+            </ul>
+          </div>
+          <script type="text/javascript">
+                  $(document).ready(function() {
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                      containerHoverID: 'toTopHover', // fading element hover id
+                      scrollSpeed: 1200,
+                      easingType: 'linear' 
+                    };
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                  });
+                </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        </div>
+      </div>
+<script>
+    new WOW().init();
+</script>
+   <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+   <script type="text/javascript">
+      $(document).ready(function($) {
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+      $("#enlaces a").on("click",function(e){
+        e.preventDefault();
+        $.ajax({
+          type:'GET',
+          url:$(this).attr("href"),
+          success:function(resp){
+            console.log(resp);
+            $(".modal-body").html(resp);
+          }
+        });
+      });
+    </script>
+    <script>
+      $(function() {
+        var pull    = $('#pull');
+          menu    = $('nav ul');
+          menuHeight  = menu.height();
+        $(pull).on('click', function(e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+        $(window).resize(function(){
+              var w = $(window).width();
+              if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+              }
+          });
+         $("#exampleModalAviso").modal("show");
+      });
+      function Like(ids){
+        $.ajax({
+          type:'GET',
+          url:'/like/'+ids+'/',
+          success:function(resp){
+            $(".modal-body").html(resp);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
