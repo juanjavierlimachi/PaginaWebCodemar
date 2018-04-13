@@ -152,7 +152,7 @@ def regisrarseUser(request):
 			if acceso.is_active and not acceso.is_staff:
 				login(request,acceso)
 				asunto = "Bienvenido: %s"%(request.POST['first_name'].capitalize())
-				mensaje = "Estamos felises por averte registrado en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://shrouded-journey-73490.herokuapp.com/ con tu respetiva cuenta o bien revisando tu correo electrónico deves en cuando. <br><br>Ahora también ya puede comunicar directamente mediante WhatsApp: https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias."
+				mensaje = "Estamos felises por averte registrado en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://young-tundra-76846.herokuapp.com/ con tu respetiva cuenta o bien revisando tu correo electrónico deves en cuando. *******Ahora también ya puede comunicar directamente mediante WhatsApp: https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias."
 				#mail = EmailMessage(subject='Ejemplo de prueba', body='Este es un ejemplo de prueba de correo', from_email='sistemasuatf12345@gmail.com.com', to=['sistemasuatf12345@gmail.com.com'])
 				#mail.send()
 				send_mail(asunto, 
@@ -212,7 +212,7 @@ def perfilUser(request):
 def bienvenida(request):
 	user = request.user
 	print user
-	return HttpResponse("Hola %s,Estamos felises por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://shrouded-journey-73490.herokuapp.com/ con tu respetiva cuenta y bien revisando tu correo electrónico.<br>Ahora también ya puede comunicar directamente mediante WhatsApp: https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias."%(user))
+	return HttpResponse("Hola %s,Estamos felises por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://young-tundra-76846.herokuapp.com/ con tu respetiva cuenta y bien revisando tu correo electrónico.<br>Ahora también ya puede comunicar directamente mediante WhatsApp: https://api.whatsapp.com/send?phone=59179436914&text=Hola%20le%20mando%20un%20saludo,%20visite%20su%20página%20web%20y%20me%20pareció%20muy%20interesante%20y%20quisiera%20que%20me%20responda%20con%20algunas%20dudas%20que%20tengo%20gracias."%(user))
 def personal(request):
 	personal = User.objects.filter(is_superuser=True, is_staff=True)
 	print personal
@@ -326,4 +326,4 @@ def like(request, id):
 	dato=Producto.objects.get(id=int(id))
 	dato=int(dato.gusto) + 1
 	Producto.objects.filter(id=int(id)).update(gusto=dato)
-	return HttpResponse('Gracias por indicar que le gusta el curso, muy pronto estaremos con más novedades.')
+	return HttpResponse('Gracias por indicar que le gusta el contenido del curso, muy pronto estaremos con más novedades.')
