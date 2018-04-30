@@ -157,7 +157,7 @@ def regisrarseUser(request):
 				#mail.send()
 				send_mail(asunto, 
 				mensaje, 
-				'"origen"caresoft.innova@gmail.com',
+				'"origen"codemar.potosi@gmail.com',
 				[request.POST['email']])
 				return HttpResponse('/')
 		else:
