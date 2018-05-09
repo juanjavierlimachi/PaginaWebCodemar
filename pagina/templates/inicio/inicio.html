@@ -299,7 +299,7 @@
 <div class="blog" id="process">
         <div class="head-section">
           <div class="container">
-            <h3><span>Estudia nuestros </span><label>Cursos</label></h3>
+            <h3><span>Libros de</span><label>Programación en C++</label></h3>
           </div>
         </div>
   <div class="blog-grids">
@@ -307,14 +307,11 @@
           <div class="blog-grids-left">
             {% for i in productos %}
     <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s"><!--start uno-->
-                <div class="blog-art-pic">
-               <div style="width: 100%;">
-         </div>
-                </div>
+                
                 <div class="blog-art-info">
-                  <h3><a href="#">{{i.Nombre_producto|upper}}</a></h3>
-                  <p>Descripción: {{i.Descripcion}}<hr>
-                    Enlace: <a href="{{i.enlace_url}}" target="_blank">Ver contenido</a>
+                  <h3><a href="{{i.enlace_url}}" target="_blank">{{i.Nombre_producto|upper}}</a></h3>
+                  <p>Descripción: {{i.Descripcion}}
+                      <a href="{{i.enlace_url}}" target="_blank">Leer contenido</a>
                   </p>
                   <ul class="blog-art-info-stags">
                     <li class="blog-art-info-stags-left"><span><span style="color:#337ab7">A: {{i.gusto}} Personas les gusta</span></span></li>
@@ -338,7 +335,7 @@
 <div class="blog" id="ofertas">
         <div class="head-section">
           <div class="container">
-            <h3><span>Tutoriales y</span><label>Presentaciones</label></h3>
+            <h3><span>Videos y</span><label>Presentaciones</label></h3>
           </div>
         </div>
   <div class="blog-grids">
@@ -346,17 +343,10 @@
           <div class="blog-grids-left">
             {% for i in pro_en_ofertas %}
     <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s"><!--start uno-->
-                <div class="blog-art-pic">
-               <div style="width: 100%;">
-         <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0; border-radius: 10px;">
-         <iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="{{i.enlace_url}}" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="no" allownetworking="all"></iframe>
-         </div>
-
-         </div>
-                </div>
-                <div class="blog-art-info">
-                  <h3><a href="#">{{i.Nombre_producto|upper}}</a></h3>
-                  <p>Descripción: {{i.Descripcion}}</p>
+          <div class="blog-art-info">
+                  <h3><a href="#" onclick="VerVideo({{i.id}})" id="id_VerVideo" data-toggle="modal" data-target="#exampleModal">{{i.Nombre_producto|upper}}</a></h3>
+                  <p>Descripción: {{i.Descripcion}}
+                      <a href="#" onclick="VerVideo({{i.id}})" id="id_VerVideo" data-toggle="modal" data-target="#exampleModal">Ver Video</a></p>
                   <ul class="blog-art-info-stags">
                     <li class="blog-art-info-stags-left"><span style="color:#337ab7">A: {{i.gusto}} Personas les gusta</span></li>
                     <li class="blog-art-info-stags-right">
@@ -487,6 +477,21 @@
           }
         });
       });
+      function VerVideo(ids){
+        //e.preventDefault();
+        $.ajax({
+          type:'GET',
+          url:'/VerVideo/'+ids+'/',
+          beforeSend:Espera,
+          success:function(resp){
+            console.log(resp);
+            $(".modal-body").html(resp);
+          }
+        });
+        function Espera(){
+      $(".modal-body").html('Espere por favor, está cargando su video');
+    }
+      }
     </script>
     <script>
       $(function() {

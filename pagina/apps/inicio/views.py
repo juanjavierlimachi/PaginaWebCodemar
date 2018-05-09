@@ -327,3 +327,7 @@ def like(request, id):
 	dato=int(dato.gusto) + 1
 	Producto.objects.filter(id=int(id)).update(gusto=dato)
 	return HttpResponse('Gracias por indicar que le gusta el contenido del curso, muy pronto estaremos con más novedades.')
+def VerVideo(request, id):
+	video=Producto.objects.get(id=int(id))
+	return render_to_response('inicio/VerVideo.html',{'video':video}, context_instance=RequestContext(request))
+
